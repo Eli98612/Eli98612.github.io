@@ -6,9 +6,9 @@ description: My teaching experience.
 nav: true
 ---
 
-# EECE 566 Detection Theory
+## EECE 566 Detection Theory
 
-I was a co-instructor for Prof. Jessica Fridrich's course [EECE 566 Detection Theory](http://ws2.binghamton.edu/fridrich/Courses/syllabus_EECE566.pdf) (Spring 2020). I made slides and gave lectures on the following topics:
+I was a co-instructor for Prof. Jessica Fridrich's graduate course [EECE 566 Detection Theory](http://ws2.binghamton.edu/fridrich/Courses/syllabus_EECE566.pdf) (Spring 2020). I made slides and gave lectures on the following topics:
 
 <style>
 table {

@@ -2,7 +2,7 @@
 layout: page
 title: Graphics Engine
 description: made using C++, OpenGL, and Windows API
-img: /assets/img/teapot.jpg
+img: /assets/img/teapot.JPG
 importance: 1
 category: Personal
 ---

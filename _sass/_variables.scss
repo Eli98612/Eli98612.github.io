@@ -5,24 +5,41 @@
 
 
 // Colors
+
+// color palette 1
+$cp1-green-dark:      #61892F !default;
+$cp1-green:           #86C232 !default;
+$cp1-gray-dark:       #222629 !default;
+$cp1-gray:            #474B4F !default;
+$cp1-gray-light:      #6B6E70 !default;
+
+// warm
+$pink-color:          #f92080 !default;
+$pink-color-light:    #ffdddd !default;
+
 $red-color:           #FF3636 !default;
 $red-color-dark:      #B71C1C !default;
+
 $orange-color:        #F29105 !default;
-$blue-color:          #0076df !default;
-$blue-color-dark:     #00369f !default;
-$cyan-color:          #2698BA !default;
-$light-cyan-color:    lighten($cyan-color, 25%);
+
+$yellow-color:        #efcc00 !default;
+
+// cool
 $green-color:         #00ab37 !default;
 $green-color-lime:    #B7D12A !default;
 $green-color-dark:    #009f06 !default;
 $green-color-light:   #ddffdd !default;
 $green-color-bright:  #11D68B !default;
-$purple-color:        #B509AC !default;
-$light-purple-color:  lighten($purple-color, 25%);
-$pink-color:          #f92080 !default;
-$pink-color-light:    #ffdddd !default;
-$yellow-color:        #efcc00 !default;
 
+$cyan-color:          #2698BA !default;
+$cyan-light-color:    lighten($cyan-color, 25%);
+
+$blue-color:          #0076df !default;
+$blue-color-dark:     #00369f !default;
+$purple-color:        #B509AC !default;
+$purple-light-color:  lighten($purple-color, 25%);
+
+// tints
 $grey-color:          #828282 !default;
 $grey-color-light:    lighten($grey-color, 40%);
 $grey-color-dark:     darken($grey-color, 25%);

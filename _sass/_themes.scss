@@ -41,13 +41,13 @@ html[data-theme='dark'] {/*
   --global-bg-color: #{$cp1-gray-dark};
   --global-code-bg-color: #{$cp1-gray};
   --global-text-color: #{$cp1-gray-light};
-  --global-text-color-light: #{$cp1-gray-light};
-  --global-theme-color: #{$cp1-green};
-  --global-hover-color: #{$cp1-green};
-  --global-footer-bg-color: #{$cp1-green-dark};
-  --global-footer-text-color: #{$cp1-gray-dark};
-  --global-footer-link-color: #{$black-color};
-  --global-distill-app-color: #{$cp1-green-dark};
+  --global-text-color-light: #{$white-color};
+  --global-theme-color: #{$cp1-purple};
+  --global-hover-color: #{$cp1-purple};
+  --global-footer-bg-color: #{$cp1-purple-dark};
+  --global-footer-text-color: #{$cp1-gray-light};
+  --global-footer-link-color: #{$cp1-purple-light};
+  --global-distill-app-color: #{$red-color-dark};
 
   .fa-sun {
     padding-left: 10px;

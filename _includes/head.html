@@ -46,6 +46,11 @@
 <!-- JQuery -->
 {% include scripts/jquery.html %}
 
+<!-- Threejs -->
+{% if page.enable_3js %}
+{% include scripts/threejs.html %}
+{% endif %}
+
 <!-- Theming-->
 {% if site.enable_darkmode %}
 <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>

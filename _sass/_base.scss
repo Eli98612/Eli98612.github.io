@@ -8,6 +8,18 @@ p, h1, h2, h3, h4, h5, h6, em, div, span, strong {
   color: var(--global-text-color);
 }
 
+table th {
+  color: var(--global-text-color);
+}
+
+table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+table td{
+  color: var(--global-text-color);
+}
+
 a, table.table a {
   color: var(--global-theme-color);
   &:hover {
@@ -254,7 +266,7 @@ footer.sticky-bottom {
 .header-bar {
   border-bottom: 1px solid $grey-color-light;
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 2em;
   padding-bottom: 5rem;
   h1 {
     color: var(--global-theme-color);

@@ -1,8 +1,10 @@
 import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r132/build/three.module.js';
 
+let shader_path = '/assets/glsl/';
+
 let clock = new THREE.Clock();
 let delta = 0;
-let interval = 1 / 30; // 30 fps
+let interval = 1 / 24; // 30 fps
 
 let scene;
 let scene_objects = [];
@@ -21,49 +23,41 @@ function addObject(color, x) {
     const boxDepth = 1;
     const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
 
-    const material = new THREE.MeshPhongMaterial({color});
+    const material = new THREE.MeshPhongMaterial({ color });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = x;
     scene.add(cube);
     scene_objects.push(cube);
 }
 
-function vertexShader() {
-    return `
-        varying vec3 vUv; 
+async function getShader(file_name) {
+    var response = await fetch(shader_path + file_name);
+    // .then(response => response.text())
+    // .then(data => text = data);
 
-        void main() {
-        vUv = position; 
+    var text = await response.text();
 
-        vec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);
-        gl_Position = projectionMatrix * modelViewPosition; 
-        }
-    `
+    console.log(text);
+
+    return text;
 }
 
-function fragmentShader() {
-    return `
-        uniform vec3 colorA; 
-        uniform vec3 colorB; 
-        varying vec3 vUv;
-
-        void main() {
-            gl_FragColor = vec4(mix(colorA, colorB, vUv.z), 1.0);
-        }
-    `
-}
-
-function addExperimentalCube() {
+async function addExperimentalCube() {
     let uniforms = {
-            colorB: {type: 'vec3', value: new THREE.Color(0xACB6E5)},
-            colorA: {type: 'vec3', value: new THREE.Color(0x74ebd5)}
-        }
+        // colorB: { type: 'vec3', value: new THREE.Color(0xACB6E5) },
+        // colorA: { type: 'vec3', value: new THREE.Color(0x74ebd5) }
+        iResolution: { type: 'vec3', value: new THREE.Vector3(60,30,1) },
+        // need to somehow update iTime uniform every frame ********************************
+        iTime: { type: 'float', value: delta }, 
+        iChannel0: { type: 'sampler2D', value: new THREE.TextureLoader().load("/assets/img/teapot.png") },
+    }
 
     let geometry = new THREE.BoxGeometry(1, 1, 1)
-    let material =  new THREE.ShaderMaterial({
+
+    let material = new THREE.ShaderMaterial({
         uniforms: uniforms,
-        fragmentShader: fragmentShader(),
-        vertexShader: vertexShader(),
+        vertexShader: await getShader('test.vert'),
+        fragmentShader: await getShader('fractal_flythrough.frag'),
     })
 
     let mesh = new THREE.Mesh(geometry, material)
@@ -72,10 +66,10 @@ function addExperimentalCube() {
     scene_objects.push(mesh)
 }
 
-function main() {
+async function main() {
     // set canvas for rendering
     const canvas = document.querySelector('#c');
-    const renderer = new THREE.WebGLRenderer({canvas});
+    const renderer = new THREE.WebGLRenderer({ canvas });
 
     // set up camera
     const fov = 80;
@@ -88,10 +82,10 @@ function main() {
     scene = new THREE.Scene();
 
     addLighting();
-    addObject(0xA271D6,  0);
+    addObject(0xA271D6, 0);
     // addObject(0xA271D6, -2);
     // addObject(0xA271D6,  2);
-    addExperimentalCube();
+    await addExperimentalCube()
 
     function render(time) {
         delta += clock.getDelta();
@@ -105,7 +99,7 @@ function main() {
             cube.rotation.y = rot;
         });
 
-        if (delta  > interval) {
+        if (delta > interval) {
             renderer.render(scene, camera);
             delta = delta % interval;
         }
@@ -114,7 +108,8 @@ function main() {
     }
     requestAnimationFrame(render);
 
+
 }
 
-main();
+await main();
 

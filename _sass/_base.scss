@@ -264,29 +264,35 @@ footer.sticky-bottom {
 // Blog
 
 .header-bar {
-  border-bottom: 1px solid $grey-color-light;
+  border-bottom: 1px solid var(--global-divider-color);
   text-align: center;
   padding-top: 2em;
   padding-bottom: 5rem;
   h1 {
     color: var(--global-theme-color);
-    font-size: 5rem;
+    font-size: 3rem;
+  }
+  h2 {
+    color: var(--global-text-color);
+    font-size: 1.5rem;
   }
 }
 
 .post-list {
   margin: 0;
   margin-bottom: 40px;
-  padding: 0;
+  padding-left: 0em;
   li {
-    border-bottom: 1px solid $grey-color-light;
-    list-style: none;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--global-divider-color);
+    list-style-type: "";//\2B17";
+    padding-left: 1em;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.3rem;
     .post-meta {
-      color: var(--global-text-color-light);
+      color: var(--global-text-color2);
       font-size: 0.875rem;
-      margin-bottom: 0;
+      //margin-bottom: 0;
     }
     a {
       color: var(--global-text-color);
@@ -296,18 +302,26 @@ footer.sticky-bottom {
       }
     }
   }
+  li::before {
+    content: "\2B17";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: var(--global-theme-color); /* Change the color */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 2em; /* Also needed for space (tweak if needed) */
+    margin-left: 0em; /* Also needed for space (tweak if needed) */
+  }
 }
 
 .pagination {
   .page-item {
     .page-link {
       color: var(--global-text-color);
+      background-color: var(--global-bg-color);
       &:hover {
-        color: $black-color;
+        background-color: var(--global-card-bg-color);
       }
     }
     &.active .page-link {
-      color: $white-color;
+      color: var(--global-text-color);
       background-color: var(--global-theme-color);
       &:hover {
         background-color: var(--global-theme-color);
@@ -504,6 +518,72 @@ footer.sticky-bottom {
   }
 }
 
+// course layout
+.course {
+  .course-title {
+    color: var(--global-text-color);
+  }
+  .course-name {
+    color: var(--global-text-color2);
+  }
+}
+
+// Teaching
+
+.teaching {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      .card-title {
+        color: var(--global-theme-color);
+      }
+    }
+  }
+  .card {
+    img {
+      width: 100%;
+    }
+    .card-title {
+      color: var(--global-card-title-color);
+      font-size: 1.8rem;
+    }
+    .card-body {
+      .card-text {
+        color: var(--global-card-text-color);
+        font-size: 1.2rem;
+      }
+    }
+    background-color: var(--global-card-bg-color);
+    color: var($red-color-dark);
+    //color: var(--global-theme-color);
+  }
+
+  .card-item {
+    width: auto;
+    margin-bottom: 10px;
+
+    .row {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .grid-item {
+    width: 250px;
+    margin-bottom: 10px;
+  }
+
+  h2.category {
+    color: var(--global-divider-color);
+    border-bottom: 1px solid var(--global-divider-color);
+    padding-top: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: right;
+  }
+}
+
 // Rouge Color Customization
 figure.highlight {
   margin: 0 0 1rem;
@@ -540,7 +620,7 @@ html.transition *:after {
 
 // 404 page
 
-.header-bar {
+.error404 {
   border: none;
   text-align: center;
   padding-top: 2em;

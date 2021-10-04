@@ -66,7 +66,7 @@ wikidata_id: # your wikidata id
 dblp_url: # your DBLP profile url
 
 contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+  Click on the icons above for my social media links.
 
 google_analytics: UA-XXXXXXXXX # out your google-analytics code
 panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
@@ -185,7 +185,7 @@ scholar:
 
 enable_google_analytics:    false  # enables google analytics
 enable_panelbear_analytics: false  # enables panelbear analytics
-enable_mansory:             true   # enables automatic project (and teaching?) cards arangement
+enable_mansory:             false  # enables automatic project (and teaching?) cards arangement
 enable_math:                true   # enables math typesetting (uses MathJax)
 enable_tooltips:            false  # enables automatic tooltip links generated
                                    # for each section titles on pages and posts
@@ -197,6 +197,10 @@ enable_project_categories:  true   # enables categorization of projects into
 enable_teaching_categories: true   # enables categorization of courses taught into
                                    # multiple categories
 enable_medium_zoom:         true   # enables image zoom feature (as on medium.com)
+enable_cv:                  true
+
+
+cv_url: /assets/pdf/example_pdf.pdf
 
 # -----------------------------------------------------------------------------
 # Library versions

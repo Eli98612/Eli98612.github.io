@@ -6,6 +6,7 @@ description: A collection of my projects.
 nav: true
 display_categories: [Personal, Coursework, Professional]
 horizontal: false
+importance: 2
 ---
 <div class="projects">
   {% if site.enable_project_categories and page.display_categories %}

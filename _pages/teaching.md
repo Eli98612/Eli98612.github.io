@@ -6,6 +6,7 @@ description: Materials for courses I taught.
 nav: true
 display_categories: [SUNY Binghamton]
 horizontal: false
+importance: 4
 ---
 
 <div class="teaching">

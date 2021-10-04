@@ -5,7 +5,15 @@
     <div class="container">
       {% if page.title != "About" %}
       <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/">
-       {% if site.title == "blank" %}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}  {{ site.last_name }}{% else %}{{ site.title }}{% endif %}
+        {% if site.title == "blank" %}
+          <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}  {{ site.last_name }}{% else %}{{ site.title }}
+        {% endif %}
+        {% if site.enable_navbar_social %}
+          <!-- Social Icons -->
+          <div class="navbar-brand social">
+            {% include social.html %}
+          </div>
+        {% endif %}
       </a>
       {% elsif site.enable_navbar_social %}
         <!-- Social Icons -->
@@ -43,7 +51,7 @@
           </li>
           {% endif %}
           <!-- Other pages -->
-          {% assign sorted_pages = site.pages | sort: "title" %}
+          {% assign sorted_pages = site.pages | sort: "importance" %}
           {% for p in sorted_pages %}
           {% if p.nav and p.autogen == nil %}
           {% if p.dropdown %}
@@ -66,7 +74,11 @@
           </li>
           {% else %}
           <li class="nav-item {% if page.title == p.title %}active{% endif %}">
+            {% if p.redirect %}
+              <a class="nav-link" href="{{ p.redirect }}">
+            {% else %}
               <a class="nav-link" href="{{ p.url | relative_url }}">
+            {% endif %}
                 {{ p.title }}
                 {% if page.title == p.title %}
                 <span class="sr-only">(current)</span>
@@ -76,6 +88,11 @@
           {% endif %}
           {% endif %}
           {% endfor %}
+          {% if site.enable_cv %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ site.cv_url }}">CV</a>
+            </li>
+          {% endif %}
           {% if site.enable_darkmode %}
             <div class = "toggle-container">
               <a id = "light-toggle">

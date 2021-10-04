@@ -5,6 +5,7 @@ title: Publications
 description: A collection of my research publications.
 years: [1956, 1950, 1935, 1905]
 nav: true
+importance: 3
 ---
 
 <div class="publications">

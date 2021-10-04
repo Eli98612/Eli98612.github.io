@@ -9,7 +9,6 @@
 // - replaces clip rect with clipping div's because clip computed style not well
 //   supported in Safari 3 or IE 7 (thanks, dhtml)
 // - more modular code, no public names
-​
 // Put code inside function to avoid conflict with other Javascript
 // - http://www.davidflanagan.com/blog/2005_07.html
 //
@@ -19,9 +18,9 @@
 // Exported function:
 //   MAGNIFIER.data() - returns the array of image data being used
 //   MAGNIFIER.reset() - rescans for images (used by magnifier_maker.html)
-​
+
 var MAGNIFIER = function (alertOnErrors) {
-​
+
 // Default magnifier is 150 wide by 150 high.
 // It can be overridden by an inline clip rect on a specific large image.
 //
@@ -31,7 +30,7 @@ var MAGNIFIER = function (alertOnErrors) {
 var defaultClipRect = "rect(0px 150px 150px 0px)";
 var defaultClipWidth = 150;
 var defaultClipHeight = 150;
-​
+
 // For internal use
 //
 // imagePairData: a list of data about all small / large image pairs.
@@ -45,24 +44,24 @@ var defaultClipHeight = 150;
 //  -- only one of data.lens and data.rect should exist
  
 var imagePairData = [];
-​
+
 // currentImagePair: the imagePairData for the item currently being magnified, if any
 var currentImagePair;
-​
-​
+
+
 // Simon Willison's addLoadEvent -- http://simonwillison.net/2004/May/26/addLoadEvent/
 function addLoadEvent(fn) {
   var oldfn = window.onload;
   window.onload = (typeof oldfn != 'function') ? fn : function() { oldfn(); fn(); };
 }
-​
+
 // center the magnifier lens on x, y
 function centerLens(data, x, y) {
   var lens = data.lens.node;
   lens.style.left = (x - (data.lens.width / 2)) + "px";
   lens.style.top = (y - (data.lens.height / 2)) + "px";
 }
-​
+
 // create a rect() from a rect() with same size but centered on x,y
 function centerRect(rect, x, y) {
   var dx = Math.round(rect.width / 2);
@@ -70,8 +69,8 @@ function centerRect(rect, x, y) {
     
   return "rect(" + (y - dy) + "px " + (x + dx) + "px " + (y + dy) + "px " + (x - dx) + "px)";
 }
-​
-​
+
+
 function findImagePairData(x, y) {
   for (var i = 0; i < imagePairData.length; ++i) {
     if (imagePairData[i].contains(x, y)) {
@@ -80,7 +79,7 @@ function findImagePairData(x, y) {
   }
   return null;
 }
-​
+
 // Don't use getCurrentStyle() -- Opera 9.5 calculates a zero-sized clipping
 // rectangle as a default. 
 function getClipRect(node) {
@@ -94,8 +93,8 @@ function getClipRect(node) {
   var height = !(top || bottom) ? defaultClipHeight : bottom - top;
   return { width: width, height: height };
 }
-​
-​
+
+
 // try every place style info might be
 function getCurrentStyle(elt, property) {
   var dv = document.defaultView && document.defaultView.getComputedStyle &&
@@ -105,11 +104,11 @@ function getCurrentStyle(elt, property) {
   var es = elt.style && elt.style[property] && elt.style[property];
   return dv || cs || rs || es;
 }
-​
+
 function getComputedValue(elt, property) {
   return parseFloat(getCurrentStyle(elt, property));
 }
-​
+
 function getImagePairData(x, y) {
   // reuse current data if possible
   if (currentImagePair) {
@@ -125,16 +124,16 @@ function getImagePairData(x, y) {
     return findImagePairData(x, y);
   }
 }
-​
+
 function getInlineValue(elt, property) {
   return parseFloat(elt.style[property] || elt[property]);
 }
-​
+
 // Return something useful as a label in error messages
 function getLabel(node) {
   return node.id || node.name || node.src || node;
 }
-​
+
 function getLargeImages() {
   var largeImages = [];
   for (var i = 0; i < document.images.length; ++i) {
@@ -144,7 +143,7 @@ function getLargeImages() {
   }
   return largeImages;
 }
-​
+
 function getLens(image) {
   if (image && isLens(image.parentNode)) {
     var node = image.parentNode;
@@ -158,7 +157,7 @@ function getLens(image) {
     return null;
   }
 }
-​
+
 function getMagnifierParent(node) {
   var parent = node.parentNode;
   if (isLens(parent)) {
@@ -166,14 +165,14 @@ function getMagnifierParent(node) {
   }
   return parent;
 }
-​
+
 function getOffset(obj, field) {
   var sum = 0;
   do { sum += obj[field];  }
   while ((obj = obj.offsetParent));
   return sum;
 }
-​
+
 function getSmallImage(largeImage) {
   var parent = getMagnifierParent(largeImage);
   var images = parent.getElementsByTagName("IMG");
@@ -184,29 +183,29 @@ function getSmallImage(largeImage) {
   }
   return null;
 }
-​
+
 function hideMagnifiedImage(image) {
   image.style.display = "none";
 }
-​
+
 function isLargeImage(image) {
   return image.className == "maglarge" || nameStartsWith(image, "large");
 }
-​
+
 function isLens(node) {
   return node && (node.className == "maglens" || nameStartsWith(node, "lens"));
 }
-​
+
 function isSmallImage(image) {
   return image.className == "magsmall" || nameStartsWith(image, "small");
 }
-​
+
 function magAlert(msg) {
   if (alertOnErrors) {
     alert("Magnifier error: " + msg);
   }
 }
-​
+
 // Pair the large image with the small image in the same container. If
 // there is no small image, create one. Return an object with data on
 // the images, magnifier lens, and magnification factor.
@@ -217,7 +216,7 @@ function makeImagePairData(i, largeImage) {
   }
   
   var imageLabel = "image: " + getLabel(largeImage);
-​
+
   // There's either a clipping maglens DIV...
   var lens = getLens(largeImage);
   if (lens && (!lens.width || !lens.height || isNaN(lens.width) || isNaN(lens.height))) {
@@ -238,7 +237,7 @@ function makeImagePairData(i, largeImage) {
     magAlert("No parent DIV found for " + imageLabel);
     return null;
   }
-​
+
   // There's either a small image given, or one is constructed.
   var smallImage = getSmallImage(largeImage) ||
                    makeSmallImage(largeImage, parent, lens ? lens.node : largeImage);
@@ -280,7 +279,7 @@ function makeImagePairData(i, largeImage) {
               }
   };
 }
-​
+
 // Passed the largeImage to copy, and where to insert it.
 function makeSmallImage(largeImage, parent, refChild) {
   if (refChild.parentNode != parent) {
@@ -303,7 +302,7 @@ function makeSmallImage(largeImage, parent, refChild) {
   smallImage.style.display = "block";
   return smallImage;
 }
-​
+
 function mouseTrack(evt) {
   var x, y;
   if (evt && !(evt.pageX === undefined)) {
@@ -327,15 +326,15 @@ function mouseTrack(evt) {
     currentImagePair = null;
   }
 }
-​
+
 function nameStartsWith(node, name) {
   return startsWith(node.name, name) || startsWith(node.id, name);
 }
-​
+
 function startsWith(str1, str2) {
   return str1 && str2 !== undefined && str2 !== null && str1.indexOf(str2) === 0;
 }
-​
+
 function updateMagnifiedImage(x, y, data) {
   // upper left of small image
   var sx = data.small.x;
@@ -372,7 +371,7 @@ function updateMagnifiedImage(x, y, data) {
   largeStyle.display = "block";
   currentImagePair = data;
 }
-​
+
 // Set up mousetracking; support W3C standard and IE
 function initListeners() {
   if (document.addEventListener) {
@@ -388,7 +387,7 @@ function initListeners() {
     document.onmousemove = mouseTrack;
   }
 }
-​
+
 // Create magnifier data for every "large" image.
 function registerImagePairs() {
   // Careful! makeImagePairData() inserts small images before the large
@@ -404,7 +403,7 @@ function registerImagePairs() {
     }
   }
 }
-​
+
 // javascript:MAGNIFIER.status()
 function makeStatusString() {
   var missing = [];
@@ -428,7 +427,7 @@ function makeStatusString() {
   testImage(i);
   return "Number of magnified images: " + imagePairData.length + "\n";
 }
-​
+
 function showImageSummary(missing) {
   var text = "";
   for (var i = 0; i <  missing.length; ++i) {
@@ -436,8 +435,8 @@ function showImageSummary(missing) {
   }
   alert(text);
 }
-​
-​
+
+
 function makeRelativePath(url) {
   var locParts = window.location.href.split("/");
   var urlParts = url.split("/");
@@ -456,20 +455,19 @@ function makeRelativePath(url) {
     return relUrl;
   }
 }
-​
+
 // startup code adds onload events to get image data and start mouse tracking
 addLoadEvent(function () {
   registerImagePairs();
   initListeners();
 });
-​
+
 return {
   data: function () { return imagePairData; },
   reset: function() { registerImagePairs(); },
   status: function() { alert(makeStatusString()); }
 };
-​
+
 // End private function; call it to initialize event handlers
 // Change true to false to silence errors noticed in loading images
 }(true);
-​

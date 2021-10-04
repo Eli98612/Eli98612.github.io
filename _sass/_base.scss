@@ -8,16 +8,35 @@ p, h1, h2, h3, h4, h5, h6, em, div, span, strong {
   color: var(--global-text-color);
 }
 
-table th {
-  color: var(--global-text-color);
-}
+.teaching-lecture-table {
+  .table-row-header {
+    font-weight: bold;
+    color: var(--global-text-color);
+  }
 
-table tr {
-  border-bottom: 1px solid #ddd;
-}
+  table {
+    tr {
+      th {
+        border-bottom: 2px solid var(--global-divider-color);
+        color: var(--global-text-color);
+      }
+    }
 
-table td{
-  color: var(--global-text-color);
+    th {
+      border-bottom: 1px solid var(--global-divider-color);
+      color: var(--global-text-color);
+
+      tr {
+        border-bottom: 1px solid var(--global-divider-color);        
+        color: var(--global-divider-color);
+      }
+    }
+
+    td {
+      border-bottom: 1px solid var(--global-divider-color);
+      color: var(--global-text-color);
+    }
+  }
 }
 
 a, table.table a {
@@ -216,7 +235,7 @@ blockquote {
 .social {
   text-align: center;
   .contact-icons {
-    font-size: 4rem;
+    font-size: 3rem;
     a {
       i::before {
         color: var(--global-text-color);
@@ -317,14 +336,14 @@ footer.sticky-bottom {
       color: var(--global-text-color);
       background-color: var(--global-bg-color);
       &:hover {
-        background-color: var(--global-card-bg-color);
+        background-color: var(--global-pagination-bg-hover-color);
       }
     }
     &.active .page-link {
       color: var(--global-text-color);
-      background-color: var(--global-theme-color);
+      background-color: var(--global-pagination-bg-active-color);
       &:hover {
-        background-color: var(--global-theme-color);
+        background-color: var(--global-pagination-bg-active-color);
       }
     }
   }
@@ -382,7 +401,7 @@ footer.sticky-bottom {
   }
 
   .grid-item {
-    width: 250px;
+    width: 300px;
     margin-bottom: 10px;
   }
 
@@ -570,7 +589,7 @@ footer.sticky-bottom {
   }
 
   .grid-item {
-    width: 250px;
+    width: 310px;
     margin-bottom: 10px;
   }
 
@@ -628,5 +647,21 @@ html.transition *:after {
   h1 {
     color: var(--global-theme-color);
     font-size: 6rem;
+  }
+}
+
+// Layered image viewer
+
+.img-stack {
+  position: relative; // puts img-stack relative to normal position
+  .stacklens {
+    display: none;
+    position: absolute; // displays lens starting at img-stack
+    overflow: hidden;
+    .img-back {
+      width: 0px;
+      height: 0px;
+      border-radius: 3px;
+    }
   }
 }

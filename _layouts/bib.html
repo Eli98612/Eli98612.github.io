@@ -10,6 +10,9 @@
     <abbr class="badge">{{entry.abbr}}</abbr>
     {% endif %}
   {% endif %}
+  {% if entry.award %}
+    <div class="award badge">{{entry.award}}</div>
+  {% endif %}
   </div>
 
   <div id="{{entry.key}}" class="col-sm-8">
@@ -69,14 +72,22 @@
 
       <div class="periodical">
       {% if entry.type == "article" %}
-        <em>{{entry.journal}}</em>
+        <em>{{entry.journal}}</em>,
       {% elsif entry.type == "inproceedings" %}
-        <em>In {{entry.booktitle}}</em>
+        <em>{{entry.booktitle}}</em>,
+      {% elsif entry.type == "misc" %}
+        <em>{{entry.venue}}</em>,
       {% endif %}
       {% if entry.year %}
         {{entry.year}}
       {% endif %}
       </div>
+
+      {% if entry.details %}
+      <div class="additional details">
+      {{entry.details}}
+      </div>
+      {% endif %}
     {% endif %}
 
     <div class="links">
@@ -141,7 +152,7 @@
     <!-- Hidden bibtex block -->
     {% if entry.bibtex_show %}
     <div class="bibtex hidden">
-      {% highlight bibtex %}{{ entry.bibtex }}{% endhighlight %}
+      {% highlight bibtex %}{{ entry.bibtex | hideCustomBibtex }}{% endhighlight %}
     </div>
     {% endif %}
   </div>

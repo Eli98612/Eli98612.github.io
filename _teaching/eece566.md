@@ -3,12 +3,14 @@ layout: course
 title: EECE 566
 description: Detection Theory
 nav: true
+img: /assets/img/teapot.png
 importance: 1
 category: SUNY Binghamton
 ---
 
 I was a co-instructor for Prof. Jessica Fridrich's graduate course [EECE 566](http://ws2.binghamton.edu/fridrich/Courses/syllabus_EECE566.pdf) (Spring 2021). We used Steven Kay's book [Detection Theory](https://www.amazon.com/Fundamentals-Statistical-Signal-Processing-Detection/dp/013504135X) (ISBN 978-0135041352). I made slides and gave lectures on the following topics:
 
+<div class="card mt-3">
 <div class="teaching-lecture-table">
   <table class="table table-hover">
     <thead>
@@ -42,4 +44,5 @@ I was a co-instructor for Prof. Jessica Fridrich's graduate course [EECE 566](ht
       </tr>
     </tbody>
   </table>
+</div>
 </div>

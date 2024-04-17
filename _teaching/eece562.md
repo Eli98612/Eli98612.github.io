@@ -3,6 +3,7 @@ layout: course
 title: EECE 562
 description: Fundamentals of Steganography
 nav: true
+img: /assets/img/teapot.png
 importance: 2
 category: SUNY Binghamton
 ---

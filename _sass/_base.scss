@@ -88,7 +88,7 @@ blockquote {
   .address {
     margin-bottom: 5px;
     margin-top: 5px;
-    font-family: monospace;
+    // font-family: monospace;
     p {
       display: inline-block;
       margin: 0;
@@ -433,7 +433,8 @@ footer.sticky-bottom {
       font-size: 1.5rem;
     }
   }
-  h2.year {
+  // h2.year {
+  h2.bibliography {
     color: var(--global-divider-color);
     border-top: 1px solid var(--global-divider-color);
     padding-top: 1rem;
@@ -452,20 +453,32 @@ footer.sticky-bottom {
         height: 2rem;
         margin-bottom: 0.5rem;
         abbr {
-          display: inline-block;
+          //display: block; //inline-block;
+          width: 6rem;
+          color: var(--global-text-color) !important;
           background-color: var(--global-theme-color);
           padding-left: 1rem;
           padding-right: 1rem;
+          @media (max-width: 576px) {
+            width: auto;
+          }
           a {
-            color: white;
+            // color: white;
             &:hover {
               text-decoration: none;
             }
           }
         }
         .award {
+          display: inline-block;
           color: var(--global-theme-color) !important;
           border: 1px solid var(--global-theme-color);
+          white-space: normal;
+          width: 6rem;
+          @media (max-width: 576px) {
+            white-space: nowrap;
+            width: auto;
+          }
         }
       }
       .title {
@@ -560,12 +573,13 @@ footer.sticky-bottom {
     }
   }
   .card {
+    height: 90%;
     img {
       width: 100%;
     }
     .card-title {
       color: var(--global-card-title-color);
-      font-size: 1.8rem;
+      //font-size: 2.5rem;//1.8rem;
     }
     .card-body {
       .card-text {
@@ -581,6 +595,7 @@ footer.sticky-bottom {
   .card-item {
     width: auto;
     margin-bottom: 10px;
+    height: 100%;
 
     .row {
       display: flex;
@@ -663,5 +678,28 @@ html.transition *:after {
       height: 0px;
       border-radius: 3px;
     }
+  }
+}
+
+
+// "Latex" styles
+// source: https://felix11h.github.io/blog/mathjax-theorems
+
+.theorem {
+  // display: block;
+  font-style: italic;
+  &:before { 
+    content: "Theorem. ";
+    font-weight: bold;
+    font-style: normal;
+  }
+  &[thm-type]:before {
+    content: attr(thm-type) ". ";
+  }
+  &[thm-name]:before {
+    content: "Theorem (" attr(thm-name) "). ";
+  }
+  &[thm-type][thm-name]:before {
+    content: attr(thm-type) " (" attr(thm-name) "). ";
   }
 }

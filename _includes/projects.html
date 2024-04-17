@@ -1,10 +1,10 @@
-<div class="grid-item">
+<div class="card-item h-100">
   {% if project.redirect %}
   <a href="{{ project.redirect }}" target="_blank">
   {% else %}
   <a href="{{ project.url | relative_url }}">
   {% endif %}
-    <div class="card hoverable">
+    <div class="card hoverable h-100">
       {% if project.img %}
       <img src="{{ project.img | relative_url }}" alt="project thumbnail">
       {% endif %}

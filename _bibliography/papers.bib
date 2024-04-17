@@ -1,72 +1,223 @@
 ---
 ---
 
-@string{aps = {American Physical Society,}}
+@STRING{JOURNAL_IEEE_TIFS = {{IEEE} Transactions on Information Forensics and Security}}
 
-@book{einstein1956investigations,
+@STRING{WIFS2023 = {IEEE International Workshop on Information Forensics and Security (WIFS)}}
+@STRING{EDITOR_WIFS2023 = {??}}
+@STRING{ADDRESS_WIFS2023 = {Nürnberg, Germany}}
+@STRING{MONTH_WIFS2023 = {December 4--7,}}
+
+@STRING{EI2023 = {Proceedings {IS\&T}, Electronic Imaging, Media Watermarking, Security, and Forensics}}
+@STRING{EDITOR_EI2023 = {A. Alattar and N. D. Memon}}
+@STRING{ADDRESS_EI2023 = {San Francisco, CA}}
+@STRING{MONTH_EI2023 = {January 16--20,}}
+
+@STRING{EI2024 = {Proceedings {IS\&T}, Electronic Imaging, Media Watermarking, Security, and Forensics}}
+@STRING{EDITOR_EI2024 = {??}}
+@STRING{ADDRESS_EI2024 = {San Francisco, CA}}
+@STRING{MONTH_EI2024 = {January 21--25,}}
+
+@STRING{IHMMSEC2022 = {The 10th ACM Workshop on Information Hiding and Multimedia Security}}
+@STRING{EDITOR_IHMMSEC2022 = {J. Butora and B. Tondi and C. Veilhauer}}
+@STRING{ADDRESS_IHMMSEC2022 = {Santa Barbara, CA}}
+@STRING{MONTH_IHMMSEC2022 = {June 27--28,}}
+
+@STRING{IHMMSEC2023 = {The 11th ACM Workshop on Information Hiding and Multimedia Security}}
+@STRING{EDITOR_IHMMSEC2023 = {A. Bharati and C. Pasquini and Y. Yousfi}}
+@STRING{ADDRESS_IHMMSEC2023 = {Chicago, IL}}
+@STRING{MONTH_IHMMSEC2023 = {June 28--30,}}
+
+@STRING{IHMMSEC2024 = {The 12th ACM Workshop on Information Hiding and Multimedia Security}}
+@STRING{EDITOR_IHMMSEC2024 = {??}}
+@STRING{ADDRESS_IHMMSEC2024 = {Baiona, Spain}}
+@STRING{MONTH_IHMMSEC2024 = {June 24--26,}}
+
+@MastersThesis{Dwo21thesis,
+  author = {E. Dworetzky},
+  title = {Explaining and Improving the {JPEG} Compatibility Attack with Statistical Hypothesis Testing and Deep Learning},
+  school = {Binghamton University},
+  address = {Binghamton, NY},
+  url = {http://dde.binghamton.edu/dworetzky/pdf/Dworetzky_MS_Thesis.pdf},
+  year = {2021},
+  publisher = {ProQuest Dissertations Publishing},
+  pdf={http://dde.binghamton.edu/dworetzky/pdf/Dworetzky_MS_Thesis.pdf},
+  abbr={MS Thesis},
   bibtex_show={true},
-  title={Investigations on the Theory of the Brownian Movement},
-  author={Einstein, Albert},
-  year={1956},
-  publisher={Courier Corporation,}
 }
 
-@article{einstein1950meaning,
-  abbr={AJP},
+@techreport{Dwo21jcarevisited,
+  author = {E. Dworetzky},
+  title = {JPEG Compatibility Attack Revisited},
+  school = {Binghamton University},
+  url = {http://dde.binghamton.edu/dworetzky/pdf/Dworetzky_MS_Thesis.pdf},
+  year = {2021},
+  html={https://par.nsf.gov/biblio/10301792},
+  abbr={NSF},
+  details={ This manuscript is an unpublished preprint of "Advancing the JPEG Compatibility Attack...". The publication info on the NSF website is incorrect.  Please cite the published ACM version or my master's thesis. },
+}
+
+@INPROCEEDINGS{yousfi2022detector,
+  title={Detector-Informed Batch Steganography and Pooled Steganalysis},
+  author={Y. Yousfi and E. Dworetzky and J. Fridrich},
+  year={2022},
+  booktitle = IHMMSEC2022,
+  editor = EDITOR_IHMMSEC2022,
+  address = ADDRESS_IHMMSEC2022,
+  month = MONTH_IHMMSEC2022,
+  publisher = {{ACM} Press},
+  abbr={IH&MMSec},
+  award={Best Student Paper Award},
   bibtex_show={true},
-  title={The meaning of relativity},
-  author={Einstein, Albert and Taub, AH},
-  journal={American Journal of Physics,},
+  abstract={We study the problem of batch steganography when the senders use feedback from a steganography detector. This brings an additional level of complexity to the table due to the highly non-linear and non-Gaussian response of modern steganalysis detectors as well as the necessity to study the impact of the inevitable mismatch between senders’ and Warden’s detectors. Two payload spreaders are considered based on the oracle generating possible cover images. Three different pooling strategies are devised and studied for a more comprehensive assessment of security. Substantial security gains are observed with respect to previous art – the detector-agnostic image-merging sender. Close attention is paid to the impact of the information available to the Warden on security.},
+  pdf={http://www.ws.binghamton.edu/fridrich/Research/BS-revision-jf.pdf},
+}
+
+@INPROCEEDINGS{kaziak2023jpegBG,
+  title={Observing Bag Gain in JPEG Batch Steganography},
+  author={E. Kaziakhmedov and E. Dworetzky and J. Fridrich},
+  year={2023},
+  booktitle = WIFS2023,
+  editor = EDITOR_WIFS2023,
+  address = ADDRESS_WIFS2023,
+  month = MONTH_WIFS2023,
+  publisher = {IEEE},
+  doi={10.1109/WIFS58808.2023.10374876},
+  abbr={IEEE WIFS},
+  bibtex_show={true},
+  pdf={http://www.ws.binghamton.edu/fridrich/Research/BagGainJPEG-05.pdf},
+  abstract={The bag gain relates to a gain in security due to spreading payload among multiple covers when the steganographer maintains a positive communication rate. This gain is maximal for a certain optimal bag size, which depends on the embedding method, payload spreading strategy, communication rate, and the cover source. Originally discovered and analyzed in the spatial domain, in this paper we study this phenomenon for JPEG images across quality factors. Our experiments and theoretical analysis indicate that the bag gain is more pronounced for senders that assign payloads based on image content more aggressively and maintain a fixed payload per bag in terms of bits per DCT rather than per non-zero AC DCT. We also observe a larger bag gain for higher JPEG qualities.},
+}
+
+@article{Dwo23BG,
+  title={Explaining the Bag Gain in Batch Steganography},
+  author={E. Dworetzky and J. Fridrich},
+  year={2023},
+  journal = JOURNAL_IEEE_TIFS,
   volume={18},
-  number={6},
-  pages={403--404},
-  year={1950},
-  publisher={American Association of Physics Teachers,}
+  number={},
+  pages={3031-3043},
+  doi={10.1109/TIFS.2023.3267667},
+  abbr={IEEE TIFS},
+  bibtex_show={true},
+  pdf={http://www.ws.binghamton.edu/fridrich/Research/BSPS_bag_gain_TIFS.pdf},
+  abstract={In batch steganography, the sender distributes the secret payload among multiple images from a “bag” to decrease the chance of being caught. Recent work on this topic described an experimentally discovered phenomenon, which we call the “bag gain”: for fixed communication rate, pooled detectors experience a decrease in statistical detectability for initially increasing bag sizes, providing an opportunity for the sender to gain in security. The bag gain phenomenon is universal in the sense of manifesting under a wide spectrum of conditions. In this paper, we explain this experimental observation by adopting a statistical model of detector response. Despite the simplicity of the model, it does capture observed trends in detectability as a function of the bag size, the rate, and cover source properties. Additionally, and surprisingly, the model predicts that in certain cover sources the sender should avoid bag sizes that are too small as this can lead to a bag loss.},
 }
 
-@article{PhysRev.47.777,
-  abbr={PhysRev},
-  title={Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author={Einstein, A. and Podolsky, B. and Rosen, N.},
-  abstract={In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal={Phys. Rev.,},
-  volume={47},
-  issue={10},
-  pages={777--780},
-  numpages={0},
-  year={1935},
-  month={May},
-  publisher=aps,
-  doi={10.1103/PhysRev.47.777},
-  url={http://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html={https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf={example_pdf.pdf},
-  selected={true}
+@INPROCEEDINGS{Dwo23JCA,
+  title={Advancing the JPEG Compatibility Attack: Theory, Performance, Robustness, and Practice},
+  author={E. Dworetzky and E. Kaziakhmedov and J. Fridrich},
+  year={2023},
+  booktitle = IHMMSEC2023,
+  editor = EDITOR_IHMMSEC2023,
+  address = ADDRESS_IHMMSEC2023,
+  month = MONTH_IHMMSEC_2023,
+  publisher = {{ACM} Press},
+  doi={10.1145/3577163.3595090},
+  abbr={IH&MMSec},
+  bibtex_show={true},
+  slides={Dworetzky_JCA_IH_23.pdf},
+  pdf={http://www.ws.binghamton.edu/fridrich/Research/JCA_IHMMSec23.pdf},
+  abstract={The JPEG compatibility attack is a steganalysis method for detecting messages embedded in the spatial representation of an image under the assumption that the cover image was a decompressed JPEG. This paper addresses a number of open problems in previous art, namely the lack of theoretical insight into how and why the attack works, low detection accuracy for high JPEG qualities, robustness to the JPEG compressor and DCT coefficient quantizer, and real-life performance evaluation. To explain the main mechanism responsible for detection and to understand the trends exhibited by heuristic detectors, we adopt a model of quantization errors of DCT coefficients in the recompressed image, and within a simplified setup, we analyze the behavior of the most powerful detector. Empowered by our analysis, we resolve the performance deficiencies using an SRNet trained on a two-channel input consisting of the image and its SQ error. This detector is compared with previous state of the art on four content-adaptive stego methods and for a wide range of payloads and quality factors. The last sections of this paper are devoted to studying robustness of this detector with respect to JPEG compressors, quantizers, and errors in estimating the JPEG quantization table. Finally, to demonstrate practical usability of this attack, we test our detector on stego images outputted by real steganographic tools available on the Internet.},
 }
 
-@article{einstein1905molekularkinetischen,
-  title={{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author={Einstein, A.},
-  journal={Annalen der physik,},
-  volume={322},
-  number={8},
-  pages={549--560},
-  year={1905},
-  publisher={Wiley Online Library}
+@INPROCEEDINGS{Dwo23ROC,
+  title={On Comparing Ad Hoc Detectors with Statistical Hypothesis Tests},
+  author={E. Dworetzky and E. Kaziakhmedov and J. Fridrich},
+  year={2023},
+  booktitle = IHMMSEC2023,
+  editor = EDITOR_IHMMSEC2023,
+  address = ADDRESS_IHMMSEC2023,
+  month = MONTH_IHMMSEC_2023,
+  publisher = {{ACM} Press},
+  abbr={IH&MMSec},
+  bibtex_show={true},
+  abstract={This paper addresses how to fairly compare ROCs of ad hoc (or data driven) detectors with tests derived from statistical models of digital media. We argue that the ways ROCs are typically drawn for each detector type correspond to different hypothesis testing problems with different optimality criteria, making the ROCs uncomparable. To understand the problem and why it occurs, we model a source of natural images as a mixture of scene oracles and derive optimal detectors for the task of image steganalysis. Our goal is to guarantee that, when the data follows the statistical model adopted for the hypothesis test, the ROC of the optimal detector bounds the ROC of the ad hoc detector. While the results are applicable beyond the field of image steganalysis, we use this setup to point out possible inconsistencies when comparing both types of detectors and explain guidelines for their proper comparison. Experiments on an artificial cover source with a known model with real steganographic algorithms and deep learning detectors are used to confirm our claims.},
+  pdf={http://www.ws.binghamton.edu/fridrich/Research/Comparing_ROCs_02.pdf},
+  slides={Dworetzky_ROC_IH_23.pdf},
 }
 
-@article{einstein1905movement,
-  abbr={Ann. Phys.},
-  title={Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author={Einstein, A.},
-  journal={Ann. Phys.,},
-  volume={17},
-  pages={549--560},
-  year={1905}
+@INPROCEEDINGS{kaziak2023wawty,
+  title={Limits of Data Driven Steganography Detectors},
+  author={E. Kaziakhmedov and E. Dworetzky and J. Fridrich},
+  year={2023},
+  booktitle = IHMMSEC2023,
+  editor = EDITOR_IHMMSEC2023,
+  address = ADDRESS_IHMMSEC2023,
+  month = MONTH_IHMMSEC_2023,
+  publisher = {{ACM} Press},
+  abbr={IH&MMSec},
+  bibtex_show={true},
+  pdf={http://www.ws.binghamton.edu/fridrich/Research/WAWTY-final_v2.pdf},
+  abstract={While deep learning has revolutionized image steganalysis in terms of performance, little is known about how much modern data driven detectors can still be improved. In this paper, we approach this difficult and currently wide open question by working with artificial but realistic looking images with a known statistical model that allows us to compute the detectability of modern content-adaptive algorithms with respect to the most powerful detectors. Multiple artificial image datasets are crafted with different levels of content complexity and noise power to assess their influence on the gap between both types of detectors. Experiments with SRNet as the heuristic detector indicate that independent noise contributes less to the performance gap than content of the same MSE. While this loss is rather small for smooth images, it can be quite large for textured images. A network trained on many realizations of a fixed textured scene will, however, recuperate most of the loss, suggesting that networks have the capacity to approximately learn the parameters of a cover source narrowed to a fixed scene.},
 }
 
-@article{einstein1905electrodynamics,
-  title={On the electrodynamics of moving bodies},
-  author={Einstein, A.},
-  year={1905}
+@misc{Dwo23rumpBG,
+  title={Explaining the Bag Gain in Batch Steganography},
+  author={E. Dworetzky and J. Fridrich},
+  year={2023},
+  venue = {Rump session talk given at the 11th ACM IH&MMSec Workshop},
+  editor = EDITOR_IHMMSEC2023,
+  address = ADDRESS_IHMMSEC2023,
+  month = MONTH_IHMMSEC_2023,
+  publisher = {{ACM} Press},
+  abbr={IH&MMSec},
+  slides={Dworetzky_rump_sess_IH_23.pdf},
+  subtype={rump},
+  details={Please cite the IEEE TIFS paper "Explaining the Bag Gain in Batch Steganography".},
+}
+
+@INPROCEEDINGS{kaziak2023cost,
+  title={Cost Polarization by Dequantizing for JPEG Steganography},
+  author={E. Kaziakhmedov and Y. Yousfi and E. Dworetzky and J. Fridrich},
+  year={2023},
+  booktitle = EI2023,
+  editor = EDITOR_EI2023,
+  address = ADDRESS_EI2023,
+  month = MONTH_EI2023,
+  abbr={IS&T EI},
+  bibtex_show={true},
+  abstract={In this article, we study a recently proposed method for improving empirical security of steganography in JPEG images in which the sender starts with an additive embedding scheme with symmetrical costs of ±1 changes and then decreases the cost of one of these changes based on an image obtained by applying a deblocking (JPEG dequantization) algorithm to the cover JPEG. This approach provides rather significant gains in security at negligible embedding complexity overhead for a wide range of quality factors and across various embedding schemes. Challenging the original explanation of the inventors of this idea, which is based on interpreting the dequantized image as an estimate of the precover (uncompressed) image, we provide alternative arguments. The key observation and the main reason why this approach works is how the polarizations of individual DCT coefficients work together. By using a MiPOD model of content complexity of the uncompressed cover image, we show that the cost polarization technique decreases the chances of “bad” combinations of embedding changes that would likely be introduced by the original scheme with symmetric costs. This statement is quantified by computing the likelihood of the stego image w.r.t. the multivariate Gaussian precover distribution in DCT domain. Furthermore, it is shown that the cost polarization decreases spatial discontinuities between blocks (blockiness) in the stego image and enforces desirable correlations of embedding changes across blocks. To further prove the point, it is shown that in a source that adheres to the precover model, a simple Wiener filter can serve equally well as a deep-learning based deblocker.},
+  pdf={http://www.ws.binghamton.edu/fridrich/Research/cost_polarization_pdfa.pdf},
+}
+
+@INPROCEEDINGS{Dwo2024biasing,
+  title={Improving Steganographic Security with Source Biasing},
+  author={E. Dworetzky and E. Kaziakhmedov and J. Fridrich},
+  year={2024},
+  booktitle = IHMMSEC2024,
+  editor = EDITOR_IHMMSEC2024,
+  address = ADDRESS_IHMMSEC2024,
+  month = MONTH_IHMMSEC_2024,
+  publisher = {{ACM} Press},
+  abbr={IH&MMSec},
+  bibtex_show={true},
+}
+
+@INPROCEEDINGS{Dwo2024scaling,
+  title={Secure Payload Scaling for Source Adaptive Payload Allocation},
+  author={E. Dworetzky and E. Kaziakhmedov and J. Fridrich},
+  year={2024},
+  booktitle = EI2024,
+  editor = EDITOR_EI2024,
+  address = ADDRESS_EI2024,
+  month = MONTH_EI2024,
+  abbr={IS&T EI},
+  bibtex_show={true},
+  abstract={Assuming that Alice commits to an embedding method and the Warden to a detector, we study how much information Alice can communicate at a constant level of statistical detectability over potentially infinitely many uses of the stego channel. When Alice is allowed to allocate her payload across multiple cover objects, we find that certain payload allocation strategies that are informed by a steganography detector exhibit super-square root secure payload (scaling exponent 0.85) for at least tens of thousands of uses of the stego channel. We analyze our experiments with a source model of soft outputs of the detector across images and show how the model determines the scaling of the secure payload.},
+  pdf={http://www.ws.binghamton.edu/fridrich/Research/Scaling.pdf},
+}
+
+@INPROCEEDINGS{kaziak2024quant,
+  title={Analyzing Quantitative Detectors for Content-Adaptive Steganography},
+  author={E. Kaziakhmedov and E. Dworetzky and J. Fridrich},
+  year={2024},
+  booktitle = EI2024,
+  editor = EDITOR_EI2024,
+  address = ADDRESS_EI2024,
+  month = MONTH_EI2024,
+  abbr={IS&T EI},
+  bibtex_show={true},
+  abstract={In this article, we study the properties of quantitative steganography detectors (estimators of the payload size) for content-adaptive steganography. In contrast to nonadaptive embedding, the estimator’s bias as well as variance strongly depend on the true payload size. Initially, and depending on the image content, the estimator may not react to embedding. With increased payload size, it starts responding as the embedding changes begin to “spill” into regions where their detection is more reliable. We quantify this behavior with the concepts of reactive and estimable payloads. To better understand how the payload estimate and its bias depend on image content, we study a maximum likelihood estimator derived for the MiPOD model of the cover image. This model correctly predicts trends observed in outputs of a state-of-the-art deep learning payload regressor. Moreover, we use the model to demonstrate that the cover bias can be caused by a small number of “outlier” pixels in the cover image. This is also confirmed for the deep learning regressor on a dataset of artificial images via attribution maps.},
+  pdf={http://www.ws.binghamton.edu/fridrich/Research/Quant.pdf},
 }

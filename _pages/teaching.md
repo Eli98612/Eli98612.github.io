@@ -5,7 +5,6 @@ title: Teaching
 description: Materials for courses I taught.
 nav: true
 display_categories: [SUNY Binghamton]
-horizontal: false
 importance: 4
 ---
 
@@ -16,22 +15,15 @@ importance: 4
       <h2 class="category">{{category}}</h2>
       {% assign categorized_courses = site.teaching | where: "category", category %}
       {% assign sorted_courses = categorized_courses | sort: "importance" %}
-      <!-- Generate cards for each course -->
-      {% if page.horizontal %}
-        <div class="container">
-          <div class="row row-cols-2">
-          {% for course in sorted_courses %}
-            {% include teaching_horizontal.html %}
-          {% endfor %}
+      <div class="container">
+        <div class="row">
+        {% for course in sorted_courses %}
+          <div class="col-sm-4 justify-content-around">
+          {% include teaching.html %}
           </div>
+        {% endfor %}
         </div>
-      {% else %}
-        <div class="grid">
-          {% for course in sorted_courses %}
-            {% include teaching.html %}
-          {% endfor %}
-        </div>
-      {% endif %}
+      </div>
     {% endfor %}
 
   {% else %}

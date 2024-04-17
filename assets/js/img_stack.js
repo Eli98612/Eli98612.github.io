@@ -36,6 +36,12 @@ function img_stack_main() {
             lensNode.style.display = 'none';
         });
 
+        // when mouse enters img-stack
+        elem.addEventListener('mouseenter', evt => {
+            reset_sizes();
+            lensNode.style.display = 'block';
+        });
+
         // when mouse moves within img-stack
         elem.addEventListener('mousemove', evt => {
 
@@ -61,8 +67,6 @@ function img_stack_main() {
             // change position of img-back so that stacklens's content shifts as desired
             imgBackNode.style.marginLeft = - newLensLeft + 'px';
             imgBackNode.style.marginTop = - newLensTop + 'px';
-
-            lensNode.style.display = 'block';
 
         }, true); // use 
     });

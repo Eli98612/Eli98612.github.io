@@ -6,20 +6,18 @@
       {% if page.title != "About" %}
       <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/">
         {% if site.title == "blank" %}
-          <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}  {{ site.last_name }}{% else %}{{ site.title }}
-        {% endif %}
-        {% if site.enable_navbar_social %}
-          <!-- Social Icons -->
-          <div class="navbar-brand social">
-            {% include social.html %}
-          </div>
+          <span style="font-weight: bold!important;">{{ site.first_name }}</span> {{ site.middle_name }}  {{ site.last_name }}{% else %}{{ site.title }}
         {% endif %}
       </a>
-      {% elsif site.enable_navbar_social %}
+      {% endif %}
+      {% if site.enable_navbar_social %}
         <!-- Social Icons -->
         <div class="navbar-brand social">
           {% include social.html %}
         </div>
+        <!--<div class="alert alert-secondary" role="alert">-->
+        <span class="font-weight-bold" style="color: red;">This website is under construction!</span>
+        <!--</div>-->
       {% endif %}
       <!-- Navbar Toggle -->
       <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

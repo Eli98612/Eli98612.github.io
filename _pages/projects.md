@@ -4,7 +4,7 @@ title: Projects
 permalink: /projects/
 description: A collection of my projects.
 nav: true
-display_categories: [Personal, Coursework, Professional]
+display_categories: [Personal, Coursework] #, Professional]
 horizontal: false
 importance: 2
 ---
@@ -25,10 +25,22 @@ importance: 2
           </div>
         </div>
       {% else %}
-        <div class="grid">
-          {% for project in sorted_projects %}
-            {% include projects.html %}
-          {% endfor %}
+        <!--<div class="grid">-->
+        <div class="container">
+          <!--<div class="row">
+            {% for project in sorted_projects %}
+            <div class="col-sm-4 justify-content-around">
+              {% include projects.html %}
+            </div>
+            {% endfor %}
+          </div>-->
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for project in sorted_projects %}
+            <div class="col">
+              {% include projects.html %}
+            </div>
+            {% endfor %}
+          </div>
         </div>
       {% endif %}
     {% endfor %}

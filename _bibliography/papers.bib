@@ -8,6 +8,11 @@
 @STRING{ADDRESS_WIFS2023 = {Nürnberg, Germany}}
 @STRING{MONTH_WIFS2023 = {December 4--7,}}
 
+@STRING{WIFS2024 = {IEEE International Workshop on Information Forensics and Security (WIFS)}}
+@STRING{EDITOR_WIFS2024 = {??}}
+@STRING{ADDRESS_WIFS2024 = {Rome, Italy}}
+@STRING{MONTH_WIFS2024 = {December 2--5,}}
+
 @STRING{EI2023 = {Proceedings {IS\&T}, Electronic Imaging, Media Watermarking, Security, and Forensics}}
 @STRING{EDITOR_EI2023 = {A. Alattar and N. D. Memon}}
 @STRING{ADDRESS_EI2023 = {San Francisco, CA}}
@@ -32,6 +37,11 @@
 @STRING{EDITOR_IHMMSEC2024 = {??}}
 @STRING{ADDRESS_IHMMSEC2024 = {Baiona, Spain}}
 @STRING{MONTH_IHMMSEC2024 = {June 24--26,}}
+
+@STRING{IHMMSEC2025 = {The 13th ACM Workshop on Information Hiding and Multimedia Security}}
+@STRING{EDITOR_IHMMSEC2025 = {??}}
+@STRING{ADDRESS_IHMMSEC2025 = {San Jose, CA}}
+@STRING{MONTH_IHMMSEC2025 = {June 18--20,}}
 
 @MastersThesis{Dwo21thesis,
   author = {E. Dworetzky},
@@ -181,6 +191,22 @@
   pdf={http://www.ws.binghamton.edu/fridrich/Research/cost_polarization_pdfa.pdf},
 }
 
+@INPROCEEDINGS{Dwo2024formingbags,
+  title={How to Form Bags in Batch Steganography},
+  author={E. Dworetzky and J. Fridrich},
+  year={2024},
+  booktitle = WIFS2024,
+  editor = EDITOR_WIFS2024,
+  address = ADDRESS_WIFS2024,
+  month = MONTH_WIFS2024,
+  publisher = {IEEE},
+  doi={10.1109/WIFS61860.2024.10810688},
+  abbr={IEEE WIFS},
+  bibtex_show={true},
+  pdf={http://www.ws.binghamton.edu/fridrich/Research/Bag-forming-final-pdfa.pdf},
+  abstract={In batch steganography, the sender spreads the secret payload among multiple cover images forming a bag. The question investigated in this paper is how many and what kind of images the sender should select for her bag. We show that by forming bags with a bias towards selecting images that are more difficult to steganalyze, the sender can either lower the probability of being detected or save on bandwidth by sending a smaller bag. These improvements can be quite substantial. Our study begins with theoretical reasoning within a suitably simplified model. The findings are confirmed on experiments with real images and modern steganographic and steganalysis techniques.},
+}
+
 @INPROCEEDINGS{Dwo2024biasing,
   title={Improving Steganographic Security with Source Biasing},
   author={E. Dworetzky and E. Kaziakhmedov and J. Fridrich},
@@ -223,4 +249,19 @@
   bibtex_show={true},
   abstract={In this article, we study the properties of quantitative steganography detectors (estimators of the payload size) for content-adaptive steganography. In contrast to nonadaptive embedding, the estimator’s bias as well as variance strongly depend on the true payload size. Initially, and depending on the image content, the estimator may not react to embedding. With increased payload size, it starts responding as the embedding changes begin to “spill” into regions where their detection is more reliable. We quantify this behavior with the concepts of reactive and estimable payloads. To better understand how the payload estimate and its bias depend on image content, we study a maximum likelihood estimator derived for the MiPOD model of the cover image. This model correctly predicts trends observed in outputs of a state-of-the-art deep learning payload regressor. Moreover, we use the model to demonstrate that the cover bias can be caused by a small number of “outlier” pixels in the cover image. This is also confirmed for the deep learning regressor on a dataset of artificial images via attribution maps.},
   pdf={http://www.ws.binghamton.edu/fridrich/Research/Quant.pdf},
+}
+
+@INPROCEEDINGS{Dwo2025mismatchedscaling,
+  title={Secure Payload Scaling in Detector-Informed Batch Steganography: The Mismatched Detectors Case},
+  author={E. Dworetzky and J. Fridrich},
+  year={2025},
+  booktitle = IHMMSEC2025,
+  editor = EDITOR_IHMMSEC2025,
+  address = ADDRESS_IHMMSEC2025,
+  month = MONTH_IHMMSEC2025,
+  publisher = {{ACM} Press},
+  abbr={IH&MMSec},
+  bibtex_show={true},
+  abstract={This paper deals with the problem of batch steganography and pooled steganalysis when the sender uses a steganography detector to spread chunks of the payload across a bag of cover images while the Warden uses a possibly different detector for her pooled steganalysis. We investigate how much information can be communicated with increasing bag size $n$ at a fixed statistical detectability of Warden's detector. Specifically, we are interested in the scaling exponent $\gamma$ of the secure payload $P(n)=cn^{\gamma}$. We approach this problem both theoretically from a statistical model of the soft output of a detector and practically using experiments on real datasets when giving both actors different detectors implemented as convolutional neural networks and a classifier with a rich model. While the effect of the detector mismatch depends on the payload allocation algorithm and the type of mismatch, in general the mismatch decreases the constant of proportionality $c$ as well as the exponent $\gamma$. This stays true independently of who has the superior detector. Many trends observed in experiments qualitatively match the theoretical predictions derived within our model. Finally, we summarize our most important findings as lessons for the sender and for the Warden.},
+  pdf={},
 }

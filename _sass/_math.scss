@@ -1,0 +1,32 @@
+// Math
+
+.equation {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+// "Latex" styles
+// source: https://felix11h.github.io/blog/mathjax-theorems
+
+.theorem {
+  // display: block;
+  font-style: italic;
+
+  &:before {
+    content: "Theorem. ";
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  &[thm-type]:before {
+    content: attr(thm-type) ". ";
+  }
+
+  &[thm-name]:before {
+    content: "Theorem (" attr(thm-name) "). ";
+  }
+
+  &[thm-type][thm-name]:before {
+    content: attr(thm-type) " (" attr(thm-name) "). ";
+  }
+}

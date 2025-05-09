@@ -1,0 +1,69 @@
+// Profile
+
+.profile {
+  margin-left: 1rem;
+  width: 100%;
+
+  .address {
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+    // font-family: monospace;
+    p {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .profile {
+    width: 30%;
+
+    .address {
+      p {
+        display: block;
+      }
+    }
+  }
+}
+
+
+
+// News
+
+.news table td {
+  font-size: 1rem;
+  color: var(--global-text-color);
+}
+
+.news table th {
+  color: var(--global-text-color);
+}
+
+// Social (bottom)
+
+.social {
+  text-align: center;
+
+  .contact-icons {
+    font-size: 3rem;
+
+    a {
+      i::before {
+        color: var(--global-text-color);
+        -webkit-transition: all 0.2s ease-in-out;
+      }
+
+      &:hover {
+        i::before {
+          color: var(--global-theme-color);
+        }
+      }
+    }
+  }
+
+  .contact-note {
+    font-size: 0.8rem;
+  }
+}

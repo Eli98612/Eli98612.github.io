@@ -1,0 +1,11 @@
+.error404 {
+    border: none;
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2rem;
+
+    h1 {
+        color: var(--global-theme-color);
+        font-size: 6rem;
+    }
+}

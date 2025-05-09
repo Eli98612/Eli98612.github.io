@@ -32,12 +32,12 @@ d-article {
 
 d-appendix {
   border-top-color: $grey-color-light !important;
-  color: var(--global-distill-app-color) !important;
+  color: var(--distill-app-color) !important;
   h3, li, span {
-    color: var(--global-distill-app-color) !important;
+    color: var(--distill-app-color) !important;
   }
   a, a.footnote-backlink {
-    color: var(--global-distill-app-color) !important;
+    color: var(--distill-app-color) !important;
     &:hover {
       color: var(--global-hover-color) !important;
     }

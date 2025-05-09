@@ -1,17 +1,17 @@
 
 function img_stack_main() {
 
-    let defaultLensWidth = 100;
-    let defaultLensHeight = 100;
+    let defaultLensWidth = 140;
+    let defaultLensHeight = 140;
 
     let elementsArray = document.querySelectorAll('div.img-stack');
 
-    elementsArray.forEach(function(elem) {
+    elementsArray.forEach(function (elem) {
 
         var lensNode = elem.querySelector('.stacklens');
         var imgFrontNode = elem.querySelector('img')
         var imgBackNode = lensNode.querySelector('.img-back');
-            
+
 
         // initialize styles
         lensNode.style.width = defaultLensWidth + 'px';
@@ -23,7 +23,7 @@ function img_stack_main() {
             imgBackNode.style.width = imgFrontNode.clientWidth + 'px';
             imgBackNode.style.height = imgFrontNode.clientHeight + 'px';
         }
-        
+
         reset_sizes();
 
         // when the front image is resized
@@ -57,8 +57,8 @@ function img_stack_main() {
             var newLensLeft = x - x0 - parseInt(lensNode.style.width) / 2;
             var newLensTop = y - y0 - parseInt(lensNode.style.height) / 2;
 
-            newLensLeft = Math.min( Math.max(newLensLeft,0) , imgFrontNode.clientWidth - parseInt(lensNode.style.width) );
-            newLensTop = Math.min( Math.max(newLensTop,0) , imgFrontNode.clientHeight - parseInt(lensNode.style.height) );
+            newLensLeft = Math.min(Math.max(newLensLeft, 0), imgFrontNode.clientWidth - parseInt(lensNode.style.width));
+            newLensTop = Math.min(Math.max(newLensTop, 0), imgFrontNode.clientHeight - parseInt(lensNode.style.height));
 
             // adjust lens so it stays within img-stack div
             lensNode.style.left = newLensLeft + 'px';
@@ -74,4 +74,4 @@ function img_stack_main() {
 }
 
 // run img_stack_main() after window is fully loaded
-window.addEventListener('load',img_stack_main());
+window.addEventListener('load', img_stack_main());

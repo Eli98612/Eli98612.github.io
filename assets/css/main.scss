@@ -8,8 +8,19 @@ $max-content-width: {{site.max_width}};
 
 @import
   "variables",
-  "themes",
-  "layout",
+  "math",
+  "layout/layout",
   "base",
-  "distill"
+  "distill",
+  "themes/light",
+  "themes/dark",
+  "components/cards",
+  "components/footer",
+  "components/img_stack",
+  "components/navbar",
+  "pages/404",
+  "pages/about",
+  "pages/blog",
+  "pages/projects",
+  "pages/teaching"
 ;

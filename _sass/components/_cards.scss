@@ -1,0 +1,44 @@
+.card {
+  box-shadow: none;
+  border: 1px solid var(--card-text-color);
+  background-color: var(--global-bg-color);
+  color: var($red-color-dark);
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      .card-title {
+        color: var(--global-theme-color);
+      }
+
+      .card {
+        background-color: var(--card-bg-color);
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .card-body {
+    .card-title {
+      color: var(--card-title-color);
+    }
+
+    .card-text {
+      color: var(--card-text-color);
+    }
+  }
+}
+
+.card-item {
+  width: auto;
+  margin-bottom: 10px;
+
+  .row {
+    display: flex;
+    align-items: center;
+  }
+}

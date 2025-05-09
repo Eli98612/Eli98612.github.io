@@ -4,47 +4,38 @@
 
 // Typography
 
-p, h1, h2, h3, h4, h5, h6, em, div, span, strong {
+h1 {
+  color: var(--global-header1-color);
+}
+
+h2 {
+  color: var(--global-header2-color);
+}
+
+h3 {
+  color: var(--global-header3-color);
+}
+
+p,
+h4,
+h5,
+h6,
+em,
+div,
+span,
+strong {
   color: var(--global-text-color);
 }
 
-.teaching-lecture-table {
-  .table-row-header {
-    font-weight: bold;
-    color: var(--global-text-color);
-  }
-
-  table {
-    tr {
-      th {
-        border-bottom: 2px solid var(--global-divider-color);
-        color: var(--global-text-color);
-      }
-    }
-
-    th {
-      border-bottom: 1px solid var(--global-divider-color);
-      color: var(--global-text-color);
-
-      tr {
-        border-bottom: 1px solid var(--global-divider-color);        
-        color: var(--global-divider-color);
-      }
-    }
-
-    td {
-      border-bottom: 1px solid var(--global-divider-color);
-      color: var(--global-text-color);
-    }
-  }
-}
-
-a, table.table a {
+a,
+table.table a {
   color: var(--global-theme-color);
+
   &:hover {
     color: var(--global-theme-color);
     text-decoration: underline;
   }
+
   &:hover:after :not(.nav-item.dropdown) {
     width: 100%;
   }
@@ -58,12 +49,7 @@ blockquote {
   font-size: 1.2rem;
 }
 
-// Math
 
-.equation {
-  margin-bottom: 1rem;
-  text-align: center;
-}
 
 // Caption
 
@@ -75,41 +61,19 @@ blockquote {
 }
 
 // Citation
-.citation, .citation-number {
+.citation,
+.citation-number {
   color: var(--global-theme-color);
 }
 
-// Profile
-
-.profile {
-  margin-left: 1rem;
-  width: 100%;
-
-  .address {
-    margin-bottom: 5px;
-    margin-top: 5px;
-    // font-family: monospace;
-    p {
-      display: inline-block;
-      margin: 0;
-    }
-  }
-}
-
-@media (min-width: 576px) {
-  .profile {
-    width: 30%;
-    .address {
-      p { display: block; }
-    }
-  }
-}
 
 .post-description {
   margin-bottom: 2rem;
   font-size: 0.875rem;
+
   a {
     color: inherit;
+
     &:hover {
       color: var(--global-theme-color);
       text-decoration: none;
@@ -117,309 +81,13 @@ blockquote {
   }
 }
 
-
-// Navbar customization
-
-.navbar {
-  box-shadow: none;
-  border-bottom: 1px solid var(--global-divider-color);
-  background-color: var(--global-bg-color);
-  opacity: 0.95;
-}
-.navbar .dropdown-menu {
-  background-color: var(--global-bg-color);
-  a:not(.active) {
-    color: var(--global-text-color);
-  }
-  a:hover {
-    color: var(--global-hover-color);
-  }
-}
-.dropdown-item {
-  color: var(--global-text-color);
-    &:hover {
-      color: var(--global-hover-color);
-      background-color: var(--global-bg-color);
-    }
-}
-.navbar.navbar-light {
-  a {
-    &:hover {
-      text-decoration: none;
-    }
-  }
-  .navbar-brand {
-    color: var(--global-text-color);
-  }
-  .navbar-nav .nav-item .nav-link {
-    color: var(--global-text-color);
-    &:hover {
-      color: var(--global-hover-color);
-    }
-  }
-  .navbar-nav .nav-item.active>.nav-link {
-      background-color: inherit;
-      font-weight: bolder;
-      color: var(--global-theme-color);
-      &:hover {
-        color: var(--global-hover-color);
-      }
-  }
-  .navbar-brand.social {
-    padding-bottom: 0;
-    padding-top: 0;
-    font-size: 1.7rem;
-    a {
-      i::before {
-        color: var(--global-text-color);
-        -webkit-transition: all 0.2s ease-in-out;
-      }
-      &:hover {
-        i::before {
-          color: var(--global-theme-color);
-        }
-      }
-    }
-  }
-}
-
-.navbar-toggler {
-  .icon-bar {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background-color: var(--global-text-color);
-    border-radius: 1px;
-    margin-bottom: 4px;
-    transition: all 0.2s;
-  }
-  .top-bar {
-    transform: rotate(45deg);
-    transform-origin: 10% 10%;
-  }
-  .middle-bar {
-    opacity: 0;
-  }
-  .bottom-bar {
-    transform: rotate(-45deg);
-    transform-origin: 10% 90%;
-  }
-}
-
-.navbar-toggler.collapsed {
-  .top-bar {
-    transform: rotate(0);
-  }
-  .middle-bar {
-    opacity: 1;
-  }
-  .bottom-bar {
-    transform: rotate(0);
-  }
-}
-
-
-// News
-
-.news table td {
-  font-size: 1rem;
-  color: var(--global-text-color);
-}
-
-.news table th {
-  color: var(--global-text-color);
-}
-
-// Social (bottom)
-
-.social {
-  text-align: center;
-  .contact-icons {
-    font-size: 3rem;
-    a {
-      i::before {
-        color: var(--global-text-color);
-        -webkit-transition: all 0.2s ease-in-out;
-      }
-      &:hover {
-        i::before {
-          color: var(--global-theme-color);
-        }
-      }
-    }
-  }
-  .contact-note {
-    font-size: 0.8rem;
-  }
-}
-
-
-// Footer
-footer.fixed-bottom {
-  background-color: var(--global-footer-bg-color);
-  font-size: 0.75rem;
-  .container {
-    color: var(--global-footer-text-color);
-    padding-top: 9px;
-    padding-bottom: 8px;
-  }
-  a {
-    color: var(--global-footer-link-color);
-    &:hover {
-      color: var(--global-theme-color);
-      text-decoration: none;
-    }
-  }
-}
-
-footer.sticky-bottom {
-  border-top: 1px solid $grey-color-light;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  font-size: 0.9rem;
-}
-
-
-// Blog
-
-.header-bar {
-  border-bottom: 1px solid var(--global-divider-color);
-  text-align: center;
-  padding-top: 2em;
-  padding-bottom: 5rem;
-  h1 {
-    color: var(--global-theme-color);
-    font-size: 3rem;
-  }
-  h2 {
-    color: var(--global-text-color);
-    font-size: 1.5rem;
-  }
-}
-
-.post-list {
-  margin: 0;
-  margin-bottom: 40px;
-  padding-left: 0em;
-  li {
-    border-bottom: 1px solid var(--global-divider-color);
-    list-style-type: "";//\2B17";
-    padding-left: 1em;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    font-size: 1.3rem;
-    .post-meta {
-      color: var(--global-text-color2);
-      font-size: 0.875rem;
-      //margin-bottom: 0;
-    }
-    a {
-      color: var(--global-text-color);
-      text-decoration: none;
-      &:hover {
-        color: var(--global-theme-color);
-      }
-    }
-  }
-  li::before {
-    content: "\2B17";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-    color: var(--global-theme-color); /* Change the color */
-    display: inline-block; /* Needed to add space between the bullet and the text */
-    width: 2em; /* Also needed for space (tweak if needed) */
-    margin-left: 0em; /* Also needed for space (tweak if needed) */
-  }
-}
-
-.pagination {
-  .page-item {
-    .page-link {
-      color: var(--global-text-color);
-      background-color: var(--global-bg-color);
-      &:hover {
-        background-color: var(--global-pagination-bg-hover-color);
-      }
-    }
-    &.active .page-link {
-      color: var(--global-text-color);
-      background-color: var(--global-pagination-bg-active-color);
-      &:hover {
-        background-color: var(--global-pagination-bg-active-color);
-      }
-    }
-  }
-}
-
-
-// Distill
-
-.distill {
-  a:hover {
-    border-bottom-color: var(--global-theme-color);
-    text-decoration: none;
-  }
-}
-
-
-// Projects
-
-.projects {
-  a {
-    text-decoration: none;
-
-    &:hover {
-      .card-title {
-        color: var(--global-theme-color);
-      }
-    }
-  }
-
-  .card {
-    img {
-      width: 100%;
-    }
-    .card-title {
-      color: var(--global-card-title-color);
-    }
-    .card-body {
-      .card-text {
-        color: var(--global-card-text-color);
-      }
-    }
-    background-color: var(--global-card-bg-color);
-    color: var($red-color-dark);
-    //color: var(--global-theme-color);
-  }
-
-  .card-item {
-    width: auto;
-    margin-bottom: 10px;
-
-    .row {
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  .grid-item {
-    width: 300px;
-    margin-bottom: 10px;
-  }
-
-  h2.category {
-    color: var(--global-divider-color);
-    border-bottom: 1px solid var(--global-divider-color);
-    padding-top: 0.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    text-align: right;
-  }
-}
 
 
 // Publications
 
 .publications {
   margin-top: 2rem;
+
   h1 {
     color: var(--global-theme-color);
     font-size: 2rem;
@@ -427,12 +95,15 @@ footer.sticky-bottom {
     margin-top: 1em;
     margin-bottom: 1em;
   }
+
   h2 {
     margin-bottom: 1rem;
+
     span {
       font-size: 1.5rem;
     }
   }
+
   // h2.year {
   h2.bibliography {
     color: var(--global-divider-color);
@@ -442,6 +113,7 @@ footer.sticky-bottom {
     margin-bottom: -2rem;
     text-align: right;
   }
+
   ol.bibliography {
     list-style: none;
     padding: 0;
@@ -449,54 +121,67 @@ footer.sticky-bottom {
 
     li {
       margin-bottom: 1rem;
+
       .abbr {
         height: 2rem;
         margin-bottom: 0.5rem;
+
         abbr {
           //display: block; //inline-block;
           width: 6rem;
-          color: var(--global-text-color) !important;
-          background-color: var(--global-theme-color);
+          color: var(--global-bg-color) !important;
+          background-color: var(--global-divider-color);
           padding-left: 1rem;
           padding-right: 1rem;
+
           @media (max-width: 576px) {
             width: auto;
           }
+
           a {
+
             // color: white;
             &:hover {
               text-decoration: none;
             }
           }
         }
+
         .award {
           display: inline-block;
           color: var(--global-theme-color) !important;
           border: 1px solid var(--global-theme-color);
           white-space: normal;
           width: 6rem;
+
           @media (max-width: 576px) {
             white-space: nowrap;
             width: auto;
           }
         }
       }
+
       .title {
+        color: var(--global-header3-color) !important;
         font-weight: bolder;
       }
+
       .author {
         a {
           border-bottom: 1px dashed var(--global-theme-color);
+
           &:hover {
-              border-bottom-style: solid;
-              text-decoration: none;
+            border-bottom-style: solid;
+            text-decoration: none;
           }
         }
-        > em {
+
+        >em {
           border-bottom: 1px solid;
           font-style: normal;
         }
       }
+
       .links {
         a.btn {
           color: var(--global-text-color);
@@ -505,12 +190,14 @@ footer.sticky-bottom {
           padding-right: 1rem;
           padding-top: 0.25rem;
           padding-bottom: 0.25rem;
+
           &:hover {
             color: var(--global-theme-color);
             border-color: var(--global-theme-color);
           }
         }
       }
+
       .hidden {
         font-size: 0.875rem;
         max-height: 0px;
@@ -526,12 +213,14 @@ footer.sticky-bottom {
           line-height: 1.4em;
           margin: 10px;
         }
+
         pre {
           font-size: 1em;
           line-height: 1.4em;
           padding: 10px;
         }
       }
+
       .hidden.open {
         max-height: 100em;
         -webkit-transition: 0.15s ease;
@@ -540,9 +229,11 @@ footer.sticky-bottom {
         -o-transition: 0.15s ease;
         transition: all 0.15s ease;
       }
+
       div.abstract.hidden {
         border: dashed 1px var(--global-bg-color);
       }
+
       div.abstract.hidden.open {
         border-color: var(--global-text-color);
       }
@@ -555,6 +246,7 @@ footer.sticky-bottom {
   .course-title {
     color: var(--global-text-color);
   }
+
   .course-name {
     color: var(--global-text-color2);
   }
@@ -572,22 +264,27 @@ footer.sticky-bottom {
       }
     }
   }
+
   .card {
     height: 90%;
+
     img {
       width: 100%;
     }
+
     .card-title {
-      color: var(--global-card-title-color);
+      color: var(--card-title-color);
       //font-size: 2.5rem;//1.8rem;
     }
+
     .card-body {
       .card-text {
-        color: var(--global-card-text-color);
+        color: var(--card-text-color);
         font-size: 1.2rem;
       }
     }
-    background-color: var(--global-card-bg-color);
+
+    background-color: var(--card-bg-color);
     color: var($red-color-dark);
     //color: var(--global-theme-color);
   }
@@ -624,11 +321,13 @@ figure.highlight {
 }
 
 pre {
-  color: var(--global-code-text-color);
-  background-color: var(--global-code-bg-color);
+  color: var(--code-text-color);
+  background-color: var(--code-bg-color);
   border-radius: 6px;
   padding: 6px 12px;
-  pre, code {
+
+  pre,
+  code {
     background-color: transparent;
     border-radius: 0;
     padding: 0;
@@ -636,8 +335,8 @@ pre {
 }
 
 code {
-  color: var(--global-code-text-color);
-  background-color: var(--global-code-bg-color);
+  color: var(--code-text-color);
+  background-color: var(--code-bg-color);
   border-radius: 3px;
   padding: 3px 3px;
 }
@@ -650,56 +349,4 @@ html.transition *:before,
 html.transition *:after {
   transition: all 750ms !important;
   transition-delay: 0 !important;
-}
-
-// 404 page
-
-.error404 {
-  border: none;
-  text-align: center;
-  padding-top: 2em;
-  padding-bottom: 2rem;
-  h1 {
-    color: var(--global-theme-color);
-    font-size: 6rem;
-  }
-}
-
-// Layered image viewer
-
-.img-stack {
-  position: relative; // puts img-stack relative to normal position
-  .stacklens {
-    display: none;
-    position: absolute; // displays lens starting at img-stack
-    overflow: hidden;
-    .img-back {
-      width: 0px;
-      height: 0px;
-      border-radius: 3px;
-    }
-  }
-}
-
-
-// "Latex" styles
-// source: https://felix11h.github.io/blog/mathjax-theorems
-
-.theorem {
-  // display: block;
-  font-style: italic;
-  &:before { 
-    content: "Theorem. ";
-    font-weight: bold;
-    font-style: normal;
-  }
-  &[thm-type]:before {
-    content: attr(thm-type) ". ";
-  }
-  &[thm-name]:before {
-    content: "Theorem (" attr(thm-name) "). ";
-  }
-  &[thm-type][thm-name]:before {
-    content: attr(thm-type) " (" attr(thm-name) "). ";
-  }
 }

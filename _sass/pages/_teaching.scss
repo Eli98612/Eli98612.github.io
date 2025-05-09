@@ -1,0 +1,33 @@
+.teaching {
+
+  .teaching-lecture-table {
+    .table-row-header {
+      font-weight: bold;
+      color: var(--global-text-color);
+    }
+
+    table {
+      tr {
+        th {
+          border-bottom: 2px solid var(--global-divider-color);
+          color: var(--global-text-color);
+        }
+      }
+
+      th {
+        border-bottom: 1px solid var(--global-divider-color);
+        color: var(--global-text-color);
+
+        tr {
+          border-bottom: 1px solid var(--global-divider-color);
+          color: var(--global-divider-color);
+        }
+      }
+
+      td {
+        border-bottom: 1px solid var(--global-divider-color);
+        color: var(--global-text-color);
+      }
+    }
+  }
+}

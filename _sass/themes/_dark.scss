@@ -1,0 +1,33 @@
+.theme-dark {
+  --global-bg-color: #{$mocha-base};
+  --global-header1-color: #{$mocha-maroon};
+  --global-header2-color: #{$mocha-peach};
+  --global-header3-color: #{$mocha-yellow};
+  --global-text-color: #{$mocha-text};
+  --global-subtext-color: #{$mocha-subtext1};
+  --global-subsubtext-color: #{$mocha-subtext0};
+  --global-theme-color: #{$mocha-mauve};
+  --global-hover-color: #{$mocha-yellow};
+  --global-divider-color: #{$mocha-sky};
+  --card-bg-color: #{$mocha-surface0};
+  --card-title-color: #{$mocha-text};
+  --card-text-color: #{$mocha-text};
+  --code-bg-color: #{$mocha-surface0};
+  --code-text-color: #{$mocha-text};
+  --distill-app-color: #{$red-color-dark};
+  --pagination-bg-active-color: #{$cp1-purple};
+  --pagination-bg-hover-color: #{$cp1-gray-dark};
+  --footer-bg-color: #{$mocha-crust};
+  --footer-text-color: #{$mocha-text};
+  --footer-link-color: #{$mocha-lavender};
+
+  .fa-sun {
+    padding-left: 10px;
+    padding-top: 12px;
+    display: block;
+  }
+
+  .fa-moon {
+    display: none;
+  }
+}

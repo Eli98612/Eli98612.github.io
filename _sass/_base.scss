@@ -112,6 +112,11 @@ blockquote {
     margin-top: 2rem;
     margin-bottom: -2rem;
     text-align: right;
+
+    @media (max-width: 767.98px) {
+      // Bootstrap's "sm" breakpoint
+      margin-bottom: 0; // or a smaller negative margin
+    }
   }
 
   ol.bibliography {
@@ -121,6 +126,12 @@ blockquote {
 
     li {
       margin-bottom: 1rem;
+
+      // --- Add wrapping rules for the list item itself ---
+      // This will help catch most cases of overflowing text within the li.
+      overflow-wrap: break-word;
+      word-wrap: break-word; // For older browser compatibility
+
 
       .abbr {
         height: 2rem;
@@ -188,12 +199,14 @@ blockquote {
           border: 1px solid var(--global-text-color);
           padding-left: 1rem;
           padding-right: 1rem;
-          padding-top: 0.25rem;
-          padding-bottom: 0.25rem;
+          padding-top: 0.22rem;
+          padding-bottom: 0.22rem;
+          font-size: 0.75rem;
 
           &:hover {
             color: var(--global-theme-color);
             border-color: var(--global-theme-color);
+            background-color: var(--card-bg-color);
           }
         }
       }
@@ -236,6 +249,30 @@ blockquote {
 
       div.abstract.hidden.open {
         border-color: var(--global-text-color);
+      }
+
+      .bibtex.hidden {
+
+        // Assuming the bibtex block is in a div with class .bibtex and .hidden
+        pre {
+          // Force wrapping within the pre tag
+          white-space: pre-wrap;
+          /* CSS3 */
+          white-space: -moz-pre-wrap;
+          /* Firefox */
+          white-space: -pre-wrap;
+          /* Opera 7 */
+          white-space: -o-pre-wrap;
+          /* Opera 7 */
+          word-wrap: break-word;
+          /* IE */
+        }
+
+        code {
+          // Ensure code within pre also wraps if necessary
+          word-break: break-word;
+          overflow-wrap: break-word;
+        }
       }
     }
   }

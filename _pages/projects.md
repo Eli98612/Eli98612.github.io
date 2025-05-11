@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Projects
-permalink: /projects/
+title: Portfolio
+permalink: /portfolio/
 description: A collection of my projects.
 nav: true
-display_categories: [Personal, Professional]
-importance: 2
+display_categories: [Personal projects, Professional]
+importance: 3
 ---
 <div class="projects">
   {% for category in page.display_categories %}

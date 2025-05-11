@@ -5,7 +5,7 @@ description: made using C++, OpenGL, and Windows API
 img: /assets/img/teapot.png
 # redirect: https://unsplash.com <--- example of redirect
 importance: 1
-category: Personal
+category: Personal projects
 ---
 
 In 2019, 

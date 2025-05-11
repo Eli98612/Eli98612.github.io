@@ -1,9 +1,17 @@
 ---
 layout: post
-title: Intro to Steganography
+title: What is Steganography?
 date: 2021-10-05
 description: #
 ---
+
+As our dependence on digital communication grows, so too does the importance of addressing questions of privacy. The most common way to protect sensitive information and private messages is via encryption. Encryption renders a message unreadable by scrambling its letters and characters, effectively concealing its content—but not its existence. An eavesdropper can readily tell when encryption is used, making it easy for authorities to impose restrictions. For example, some digital platforms require users to share secret keys with the company, and certain authoritarian governments have outlawed encryption. If such rules are opposed, users may be flagged, whistleblowers may be censored, and citizens fearing persecution may be investigated or even jailed.
+
+One solution is to use a method of covert communication called steganography, the focus of my graduate research. Steganography conceals the very existence of a secret message by embedding it within some innocuous object. A quintessential example is the use of invisible ink; a message can only be revealed by those aware of its presence using a black light. Given the proliferation of digital media, popular methods of steganography hide information within digital images by making small changes (imperceptible to the human eye) to pixels. 
+
+Just like any technology, steganography can be abused by bad actors. Thus, the practice of detecting steganography—called steganalysis—is of particular interest to government organizations for the purposes of espionage, antiterrorism, and mass surveillance efforts.
+
+## Examples
 
 Steganography is the practice of concealing a message within a physical object. 
 

@@ -21,7 +21,22 @@ footer.fixed-bottom {
 
 footer.sticky-bottom {
   border-top: 1px solid $grey-color-light;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  // padding-top: 40px;
+  // padding-bottom: 40px;
   font-size: 0.9rem;
+
+  background-color: var(--footer-bg-color);
+
+  .container {
+    color: var(--footer-text-color);
+    padding-top: 9px;
+    padding-bottom: 8px;
+  }
+
+}
+
+body.sticky-bottom-footer {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh; // fill the viewport when content is short
 }

@@ -97,6 +97,7 @@
   bibtex_show={true},
   pdf={http://www.ws.binghamton.edu/fridrich/Research/BagGainJPEG-05.pdf},
   abstract={The bag gain relates to a gain in security due to spreading payload among multiple covers when the steganographer maintains a positive communication rate. This gain is maximal for a certain optimal bag size, which depends on the embedding method, payload spreading strategy, communication rate, and the cover source. Originally discovered and analyzed in the spatial domain, in this paper we study this phenomenon for JPEG images across quality factors. Our experiments and theoretical analysis indicate that the bag gain is more pronounced for senders that assign payloads based on image content more aggressively and maintain a fixed payload per bag in terms of bits per DCT rather than per non-zero AC DCT. We also observe a larger bag gain for higher JPEG qualities.},
+  slides={dworetzky_jpeg_bag_gain_wifs23.pdf},
 }
 
 @article{Dwo23BG,
@@ -126,7 +127,7 @@
   doi={10.1145/3577163.3595090},
   abbr={IH&MMSec},
   bibtex_show={true},
-  slides={Dworetzky_JCA_IH_23.pdf},
+  slides={dworetzky_jca_ihmmsec23.pdf},
   pdf={http://www.ws.binghamton.edu/fridrich/Research/JCA_IHMMSec23.pdf},
   abstract={The JPEG compatibility attack is a steganalysis method for detecting messages embedded in the spatial representation of an image under the assumption that the cover image was a decompressed JPEG. This paper addresses a number of open problems in previous art, namely the lack of theoretical insight into how and why the attack works, low detection accuracy for high JPEG qualities, robustness to the JPEG compressor and DCT coefficient quantizer, and real-life performance evaluation. To explain the main mechanism responsible for detection and to understand the trends exhibited by heuristic detectors, we adopt a model of quantization errors of DCT coefficients in the recompressed image, and within a simplified setup, we analyze the behavior of the most powerful detector. Empowered by our analysis, we resolve the performance deficiencies using an SRNet trained on a two-channel input consisting of the image and its SQ error. This detector is compared with previous state of the art on four content-adaptive stego methods and for a wide range of payloads and quality factors. The last sections of this paper are devoted to studying robustness of this detector with respect to JPEG compressors, quantizers, and errors in estimating the JPEG quantization table. Finally, to demonstrate practical usability of this attack, we test our detector on stego images outputted by real steganographic tools available on the Internet.},
 }
@@ -144,7 +145,7 @@
   bibtex_show={true},
   abstract={This paper addresses how to fairly compare ROCs of ad hoc (or data driven) detectors with tests derived from statistical models of digital media. We argue that the ways ROCs are typically drawn for each detector type correspond to different hypothesis testing problems with different optimality criteria, making the ROCs uncomparable. To understand the problem and why it occurs, we model a source of natural images as a mixture of scene oracles and derive optimal detectors for the task of image steganalysis. Our goal is to guarantee that, when the data follows the statistical model adopted for the hypothesis test, the ROC of the optimal detector bounds the ROC of the ad hoc detector. While the results are applicable beyond the field of image steganalysis, we use this setup to point out possible inconsistencies when comparing both types of detectors and explain guidelines for their proper comparison. Experiments on an artificial cover source with a known model with real steganographic algorithms and deep learning detectors are used to confirm our claims.},
   pdf={http://www.ws.binghamton.edu/fridrich/Research/Comparing_ROCs_02.pdf},
-  slides={Dworetzky_ROC_IH_23.pdf},
+  slides={dworetzky_roc_ihmmsec23.pdf},
 }
 
 @INPROCEEDINGS{kaziak2023wawty,
@@ -172,7 +173,7 @@
   month = MONTH_IHMMSEC_2023,
   publisher = {{ACM} Press},
   abbr={IH&MMSec},
-  slides={Dworetzky_rump_sess_IH_23.pdf},
+  slides={dworetzky_rump_session_ihmmsec23.pdf},
   subtype={rump},
   details={Please cite the IEEE TIFS paper "Explaining the Bag Gain in Batch Steganography".},
 }
@@ -205,6 +206,7 @@
   bibtex_show={true},
   pdf={http://www.ws.binghamton.edu/fridrich/Research/Bag-forming-final-pdfa.pdf},
   abstract={In batch steganography, the sender spreads the secret payload among multiple cover images forming a bag. The question investigated in this paper is how many and what kind of images the sender should select for her bag. We show that by forming bags with a bias towards selecting images that are more difficult to steganalyze, the sender can either lower the probability of being detected or save on bandwidth by sending a smaller bag. These improvements can be quite substantial. Our study begins with theoretical reasoning within a suitably simplified model. The findings are confirmed on experiments with real images and modern steganographic and steganalysis techniques.},
+  slides={dworetzky_forming_bags_wifs24.pdf},
 }
 
 @INPROCEEDINGS{Dwo2024biasing,
@@ -221,6 +223,22 @@
   bibtex_show={true},
   abstract={By selecting covers in which steganographic embedding is harder to detect, the steganographer can decrease the chances of being caught by the Warden. On the other hand, sampling from the cover source with a bias is detectable on its own. In this paper, we study this trade-off theoretically within a simple source model. Our analysis predicts the existence of "bias security gain" when the sender selects the sampling bias optimally. Sampling with a bias initially morphs the ROC of Warden’s detector to be asymmetrical, lowering the true positive rate for small false alarm rates. We provide a theorem, analogous to the square root law, for the joint critical rates of sampling bias and payload that achieve asymptotically constant detectability. Our analysis is verified experimentally.},
   pdf={http://www.ws.binghamton.edu/fridrich/Research/source_biasing.pdf},
+  slides={dworetzky_source_biasing_ihmmsec24.pdf},
+}
+
+@misc{Dwo24rumpScaling,
+  title={Super Square-Root Scaling in Batch Steganography},
+  author={E. Dworetzky and E. Kaziakhmedov and J. Fridrich},
+  year={2024},
+  venue = {Rump session talk given at the 12th ACM IH&MMSec Workshop},
+  editor = EDITOR_IHMMSEC2024,
+  address = ADDRESS_IHMMSEC2024,
+  month = MONTH_IHMMSEC_2024,
+  publisher = {{ACM} Press},
+  abbr={IH&MMSec},
+  slides={dworetzky_rump_session_ihmmsec24.pdf},
+  subtype={rump},
+  details={Please cite the IS&T EI paper "Secure Payload Scaling for Source Adaptive Payload Allocation".},
 }
 
 @INPROCEEDINGS{Dwo2024scaling,
@@ -263,5 +281,5 @@
   abbr={IH&MMSec},
   bibtex_show={true},
   abstract={This paper deals with the problem of batch steganography and pooled steganalysis when the sender uses a steganography detector to spread chunks of the payload across a bag of cover images while the Warden uses a possibly different detector for her pooled steganalysis. We investigate how much information can be communicated with increasing bag size $n$ at a fixed statistical detectability of Warden's detector. Specifically, we are interested in the scaling exponent $\gamma$ of the secure payload $P(n)=cn^{\gamma}$. We approach this problem both theoretically from a statistical model of the soft output of a detector and practically using experiments on real datasets when giving both actors different detectors implemented as convolutional neural networks and a classifier with a rich model. While the effect of the detector mismatch depends on the payload allocation algorithm and the type of mismatch, in general the mismatch decreases the constant of proportionality $c$ as well as the exponent $\gamma$. This stays true independently of who has the superior detector. Many trends observed in experiments qualitatively match the theoretical predictions derived within our model. Finally, we summarize our most important findings as lessons for the sender and for the Warden.},
-  pdf={},
+
 }

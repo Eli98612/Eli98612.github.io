@@ -4,7 +4,7 @@ title: SecretGPT
 description: hiding secrets in AI generated text
 img: /assets/img/teapot.png
 importance: 2
-category: Personal
+category: Personal projects
 ---
 
 > *SecretGPT* showcases a private means of communication using generative AI secure enough to use over public social media platforms. This project was completed within a 24 hour period during the hackathon *HackBU2024* and took 1st place!

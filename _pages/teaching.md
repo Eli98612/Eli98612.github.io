@@ -3,7 +3,7 @@ layout: page
 permalink: /teaching/
 title: Teaching
 description: Materials for courses I taught.
-nav: true
+nav: false
 display_categories: [SUNY Binghamton]
 importance: 4
 ---

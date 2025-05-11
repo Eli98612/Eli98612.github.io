@@ -21,6 +21,10 @@ Here is my [CV](/assets/pdf/example_pdf.pdf).
 
 ## Research interests
 
+My research involves a combination of steganography and steganalysis. I am specifically studying the problem of batch steganography which is concerned with hiding a message not within one image, but spreading it across an entire collection or bag of many images. 
+
+I enjoy approaching my research from both theoretical and practical perspectives. One goal of my research is to study the fundamental limitations of steganography and the dynamics of certain security trends. Another goal is to leverage this knowledge in order to design more intelligent steganography algorithms. To this end, I employ techniques from a broad range of fields such as statistical hypothesis testing, machine learning, and game theory.
+
 One enjoyable aspect of my research is its interdisciplinary nature. Steganography and Steganalysis borrow techniques from a variety of fields: signal detection and estimation theory, image processing and forensics, information theory, machine and deep learning, coding theory, game theory, optimization, statistical physics....
 
 Additionally, research in Steganography and Steganalysis can be both theoretical and experimental....
